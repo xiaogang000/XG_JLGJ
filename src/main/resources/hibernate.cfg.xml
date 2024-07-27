@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" >
+<hibernate-configuration>
+    <session-factory>
+        <!--  定义数据库连接驱动-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--定义数据库服务器地址-->
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/sqldemo</property>
+        <!--数据库用户名-->
+        <property name="hibernate.connection.username">root</property>
+        <!--数据库用户对应的密码-->
+        <property name="hibernate.connection.password">root</property>
+        <!--数据库对应的方言-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!--在操作数据库时是否打印SQL语句-->
+        <property name="hibernate.show_sql">true</property>
+        <!-- 指定是否对输出的 SQL 语句进行格式化 -->
+        <property name="hibernate.format_sql">true</property>
+        <!--打开hbm2ddl.auto选项，就是如果我们的mysql里面没有该test数据库则自动创建test数据库里面的表-->
+        <property name="hbm2ddl.auto">update</property>
+        <!--配置ORM映射文件-->
+        <mapping resource="com/demo/bean/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

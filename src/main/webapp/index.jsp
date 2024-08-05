@@ -11,7 +11,7 @@
   <a href="./sqldemo3?name=Bob">第三关: 逃之夭夭</a></br>
   <a href="./sqldemo4?name=Bob">第四关: 巧夺天工</a></br>
   <a href="./sqldemo5?name=Bob">第五关: 暗渡陈仓</a></br>
-  <a href="./#">第刘关: 钻研中........</a></br>
+  <a href="./#">第六关: 钻研中........</a></br>
   </br>
   公众号: XG小刚</br>
   项目链接: https://github.com/xiaogang000/XG_JLGJ</br>

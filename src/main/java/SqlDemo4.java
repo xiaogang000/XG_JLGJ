@@ -81,7 +81,7 @@ public class SqlDemo4 extends HttpServlet {
     }
 
     private boolean containsInvalidKeyword(String input) {
-        String[] invalidKeywords = {"#","-","/*","*/","*","sql"};
+        String[] invalidKeywords = {"#","-","/*","*/","*","sql("};
         String lowerCaseInput = input.toLowerCase();
         for (String keyword : invalidKeywords) {
             if (lowerCaseInput.contains(keyword)) {

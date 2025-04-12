@@ -39,5 +39,9 @@
 项目链接: https://github.com/xiaogang000/XG_JLGJ
 ```
 
+## WP 
 
+第一关：sqlmap
+
+第二关：https://mp.weixin.qq.com/s/5HU1LrcXWKPHuebRXnmreA
 

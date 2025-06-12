@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
 
-@WebServlet(name = "sqldemo5", urlPatterns = "/sqldemo5")
+@WebServlet(name = "sqli5", urlPatterns = "/sqli5")
 public class SqlDemo5 extends HttpServlet {
     Session session;
     private SessionFactory factory;
@@ -33,18 +33,17 @@ public class SqlDemo5 extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<h>第五关: 暗渡陈仓</h></br>");
-        out.println("URL: /sqldemo5?name=Bob</br>");
+        out.println("URL: /sqli5?name=Bob</br>");
         out.println("</br>");
-        out.println("flag在sqldemo2.test表的flag字段</br>");
+        out.println("flag在xgattack.test表的flag字段</br>");
         out.println("</br>");
-
 
         try {
             tx = session.beginTransaction();
             String name = req.getParameter("name");
             if (name != null && containsInvalidKeyword(name)) {
                 resp.getWriter().println("监测到危险关键字");
-            }else {
+            } else {
                 String sql = "from com.demo.bean.User where name ='" + name + "'";
                 out.println("SQL: " + sql + "</br>");
                 out.println("</br>");
@@ -81,7 +80,7 @@ public class SqlDemo5 extends HttpServlet {
     }
 
     private boolean containsInvalidKeyword(String input) {
-        String[] invalidKeywords = {"union","select","from","updatexml","#","--"};
+        String[] invalidKeywords = {"union", "select", "from", "updatexml", "#", "--"};
         String lowerCaseInput = input.toLowerCase();
         for (String keyword : invalidKeywords) {
             if (lowerCaseInput.contains(keyword)) {

@@ -4,6 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.dao.UserDao">
     <select id="selectA" parameterType="String" resultType="com.demo.bean.User">
-        select * from sqldemo.user where ${tablename} = #{name}
+        select * from xgdemo.user where ${tablename} = #{name}
     </select>
 </mapper>

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "sqldemo2", urlPatterns = "/sqldemo2")
+@WebServlet(name = "sqli2", urlPatterns = "/sqli2")
 public class SqlDemo2 extends HttpServlet {
 
     private SqlSession session;
@@ -47,9 +47,9 @@ public class SqlDemo2 extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<h>第二关: 狸猫换太子</h></br>");
-        out.println("URL: /sqldemo2?tablename=name&name=Bob</br>");
+        out.println("URL: /sqli2?tablename=name&name=Bob</br>");
         out.println("</br>");
-        out.println("flag在sqldemo2.test表的flag字段</br>");
+        out.println("flag在xgattack.test表的flag字段</br>");
         out.println("</br>");
 
         String tablename = req.getParameter("tablename");
@@ -86,7 +86,7 @@ public class SqlDemo2 extends HttpServlet {
     }
 
     private boolean containsInvalidKeyword(String input) {
-        String[] invalidKeywords = {"union", "select", "from","@", "<", ">","&","|","#","--", "(", ")", "_","!",";"};
+        String[] invalidKeywords = {"union", "select", "from", "@", "<", ">", "&", "|", "#", "--", "(", ")", "_", "!", ";"};
         String lowerCaseInput = input.toLowerCase();
         for (String keyword : invalidKeywords) {
             if (lowerCaseInput.contains(keyword)) {

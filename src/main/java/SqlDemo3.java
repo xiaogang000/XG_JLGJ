@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
 
-@WebServlet(name = "sqldemo3", urlPatterns = "/sqldemo3")
+@WebServlet(name = "sqli3", urlPatterns = "/sqli3")
 public class SqlDemo3 extends HttpServlet {
     Session session;
     private SessionFactory factory;
@@ -29,20 +29,19 @@ public class SqlDemo3 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<h>第三关: 逃之夭夭</h></br>");
-        out.println("URL: /sqldemo3?name=Bob</br>");
+        out.println("URL: /sqli3?name=Bob</br>");
         out.println("</br>");
-        out.println("flag在sqldemo2.test表的flag字段</br>");
+        out.println("flag在xgattack.test表的flag字段</br>");
         out.println("</br>");
 
         try {
             tx = session.beginTransaction();
             String name = req.getParameter("name");
-            String sql = "from com.demo.bean.User where name ='"+name+"'";
-            out.println("SQL: " + sql+"</br>");
+            String sql = "from com.demo.bean.User where name ='" + name + "'";
+            out.println("SQL: " + sql + "</br>");
             out.println("</br>");
 
             Query query = session.createQuery(sql, User.class);

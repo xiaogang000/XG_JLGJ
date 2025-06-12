@@ -7,7 +7,7 @@ public class UserSqLProvider {
     public String selectB(final Map<String, Object> params){
         return new SQL(){{
             SELECT("*");
-            FROM("sqldemo.user");
+            FROM("xgdemo.user");
             WHERE( "`"+params.get("tablename")+"` = #{name}");
         }}.toString();
     }

@@ -1,7 +1,7 @@
--- 创建数据库sqldemo
-CREATE DATABASE sqldemo;
--- 使用sqldemo数据库
-USE sqldemo;
+-- 创建数据库xgdemo
+CREATE DATABASE xgdemo;
+-- 使用xgdemo数据库
+USE xgdemo;
 -- 创建user表
 CREATE TABLE user (
                       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,10 +15,10 @@ INSERT INTO user (name, passwd, age, addr) VALUES
                                                ('Alice', 'password123', 25, '123 Main St'),
                                                ('Bob', 'password456', 30, '456 Elm St'),
                                                ('Charlie', 'password789', 35, '789 Oak St');
--- 创建数据库sqldemo2
-CREATE DATABASE sqldemo2;
--- 使用sqldemo2数据库
-USE sqldemo2;
+-- 创建数据库xgattack
+CREATE DATABASE xgattack;
+-- 使用xgattack数据库
+USE xgattack;
 -- 创建test表
 CREATE TABLE test (
                       id INT AUTO_INCREMENT PRIMARY KEY,
